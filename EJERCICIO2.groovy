@@ -21,9 +21,9 @@ class Estudiante {
 
 class Curso {
     
-    def estudiantes = [];
+    List estudiantes = [];
 
-    def estudiantes() {
+    List estudiantes() {
         return estudiantes;
     }
 
@@ -31,15 +31,6 @@ class Curso {
     {
         estudiantes.add(unEstudiante);  
     }
-    
-    /*void imprimirEstudiantes()
-    {
-        for(def e: estudiantes)
-        {
-            println e.toString();
-            println "\n";
-        }
-    }*/
     
     int cantidadDeEstudiantesInscriptos()
     {
