@@ -1,0 +1,4 @@
+
+1) a) Devuelve un monto basico de 10000 multiplicado por el 0.05 que es igual a 500
+   
+   b) Devuelve la suma entre un monto basico igual a 7000 mas un bono por categoria igual a 2000 es decir un total de 9000
