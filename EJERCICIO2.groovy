@@ -60,188 +60,188 @@ class Curso {
        int bandera=0;
         if(estudiantes.size()>0)
         {
-            for(int i=0;i<estudiantes.size();i++)
+            estudiantes.each
             {
-                if(estudiantes.get(i).getDni()==unEstudiante.getDni()){
+                if(it.dni==unEstudiante.getDni()){
                     
                     bandera=1;
                 }
             }
             if(bandera==1){
                     
-                    println "Si se encuentra inscripto en el curso"
+                    println "Si se encuentra inscripto en el curso";
                 }
                 else{
 
-                    println "No se encuentra inscripto en el curso"
+                    println "No se encuentra inscripto en el curso";
                 
                 }   
         }   
     }
     
     void existeEstudianteConNotaDiez(){
-        int cantidad = 0
+        int cantidad = 0;
         if(estudiantes.size()>0)
         {
-            for(int i=0;i<estudiantes.size();i++)
+            estudiantes.each
             {
-                if(estudiantes.get(i).getCalificacion()==10){
+                if(it.calificacion==10){
                     
-                    cantidad=cantidad+1
+                    cantidad=cantidad+1;
                 }
             } 
-            println "Los alumnos que sacaron un 10 como calificacion son ${cantidad}"
+            println "Los alumnos que sacaron un 10 como calificacion son ${cantidad}";
         } 
     }
     
     void existeEstudianteLlamado(String unNombre){
-        int cantidad = 0
+        int cantidad = 0;
         if(estudiantes.size()>0)
         {
-            for(int i=0;i<estudiantes.size();i++)
+            estudiantes.each
             {
-                if(estudiantes.get(i).getNombre()==unNombre){
+                if(it.nombre==unNombre){
                     
-                    cantidad=cantidad+1
+                    cantidad=cantidad+1;
                 }
             } 
             if(cantidad>=0){
-            println "Existe/n "+cantidad+" alumno/s inscripto/s con ese nombre en el curso"
+            println "Existe/n "+cantidad+" alumno/s inscripto/s con ese nombre en el curso";
             }
             else{
                 
-                println "No existe ningun alumno inscripto con ese nombre en el curso"
+                println "No existe ningun alumno inscripto con ese nombre en el curso";
             }
         } 
     }
     
     float porcentajeDeAprobados(){
         
-        float cantidadAprobados = 0,cantidadTotal=0,porcentajeAprobados=0
+        float cantidadAprobados = 0,cantidadTotal=0,porcentajeAprobados=0;
         if(estudiantes.size()>0)
         {
-            for(int i=0;i<estudiantes.size();i++)
+            estudiantes.each
             {
-                if(estudiantes.get(i).getCalificacion()>=5){
+                if(it.calificacion>=5){
                     
-                    cantidadAprobados=cantidadAprobados+1
+                    cantidadAprobados=cantidadAprobados+1;
                 }
             }
-            cantidadTotal=estudiantes.size()
+            cantidadTotal=estudiantes.size();
             
-            porcentajeAprobados=(cantidadAprobados)*100/cantidadTotal
+            porcentajeAprobados=(cantidadAprobados)*100/cantidadTotal;
         }
-        return porcentajeAprobados
+        return porcentajeAprobados;
     }
     
     void promedioDeCalicaciones(){
         
-        float sumaNotas = 0,cantidadTotal=0,promedioNotas=0
+        float sumaNotas = 0,cantidadTotal=0,promedioNotas=0;
         if(estudiantes.size()>0)
         {
-            for(int i=0;i<estudiantes.size();i++)
+            estudiantes.each
             {
-                sumaNotas= sumaNotas+estudiantes.get(i).getCalificacion()
+                sumaNotas= sumaNotas+it.calificacion;
             }
-            cantidadTotal=estudiantes.size()
+            cantidadTotal=estudiantes.size();
             
-            promedioNotas=sumaNotas/cantidadTotal
+            promedioNotas=sumaNotas/cantidadTotal;
             
-            println "El promedio de las notas obtenidas por los alumnos es igual a "+promedioNotas
+            println "El promedio de las notas obtenidas por los alumnos es igual a ${promedioNotas}";
         }
     }
     
     boolean unDesastre(){
         
-        int cantidadDesaprobados = 0,cantidadTotal=0
+        int cantidadDesaprobados = 0,cantidadTotal=0;
         if(estudiantes.size()>0)
         {
-            for(int i=0;i<estudiantes.size();i++)
+            estudiantes.each
             {
-                if(estudiantes.get(i).getCalificacion()<=4){
+                if(it.calificacion<=4){
                     
-                    cantidadDesaprobados=cantidadDesaprobados+1
+                    cantidadDesaprobados=cantidadDesaprobados+1;
                 }
             }
-            cantidadTotal=estudiantes.size()
+            cantidadTotal=estudiantes.size();
             if(cantidadTotal==cantidadDesaprobados){
             
-                return true
+                return true;
             } 
         }
-        return false
+        return false;
     }
     
     String calificacionMasFrecuente(){
         
-        int c0=0,c1=0,c2=0,c3=0,c4=0,c5=0,c6=0,c7=0,c8=0,c9=0,c10=0
+        int c0=0,c1=0,c2=0,c3=0,c4=0,c5=0,c6=0,c7=0,c8=0,c9=0,c10=0;
         if(estudiantes.size()>0)
         {
-            for(int i=0;i<estudiantes.size();i++)
+            estudiantes.each
             {
-                if(estudiantes.get(i).getCalificacion()==0){
+                if(it.calificacion==0){
                     
-                    c0=c0+1
+                    c0=c0+1;
                 }
                 else{
                     
-                    if(estudiantes.get(i).getCalificacion()==1){
+                    if(it.calificacion==1){
                     
-                        c1=c1+1
+                        c1=c1+1;
                     }
                     else{
                     
-                        if(estudiantes.get(i).getCalificacion()==2){
+                        if(it.calificacion==2){
                     
-                            c2=c2+1
+                            c2=c2+1;
                         }
                         else{
                     
-                            if(estudiantes.get(i).getCalificacion()==3){
+                            if(it.calificacion==3){
                     
-                                c3=c3+1
+                                c3=c3+1;
                             }
                             else{
                     
-                                if(estudiantes.get(i).getCalificacion()==4){
+                                if(it.calificacion==4){
                     
-                                    c4=c4+1
+                                    c4=c4+1;
                                 }
                                 else{
                     
-                                    if(estudiantes.get(i).getCalificacion()==5){
+                                    if(it.calificacion==5){
                     
-                                        c5=c5+1
+                                        c5=c5+1;
                                     }
                                     else{
                     
-                                        if(estudiantes.get(i).getCalificacion()==6){
+                                        if(it.calificacion==6){
                     
-                                            c6=c6+1
+                                            c6=c6+1;
                                         }
                                         else{
                     
-                                            if(estudiantes.get(i).getCalificacion()==7){
+                                            if(it.calificacion==7){
                     
-                                                c7=c7+1
+                                                c7=c7+1;
                                             }
                                             else{
                     
-                                                if(estudiantes.get(i).getCalificacion()==8){
+                                                if(it.calificacion==8){
                     
-                                                    c8=c8+1
+                                                    c8=c8+1;
                                                 }
                                                 else{
                     
-                                                    if(estudiantes.get(i).getCalificacion()==9){
+                                                    if(it.calificacion==9){
                     
-                                                        c9=c9+1
+                                                        c9=c9+1;
                                                     }
                                                     else{
                     
-                                                        if(estudiantes.get(i).getCalificacion()==10){
+                                                        if(it.calificacion==10){
                     
-                                                            c10=c10+1
+                                                            c10=c10+1;
                                                         }
                                                     }
                                                 }
@@ -256,63 +256,61 @@ class Curso {
             }
             if((c0>c1)&&(c0>c2)&&(c0>c3)&&(c0>c4)&&(c0>c5)&&(c0>c6)&&(c0>c7)&&(c0>c8)&&(c0>c9)&&(c0>c10)){
                 
-                return "cero"
+                return "cero";
             }
             if((c1>c0)&&(c1>c2)&&(c1>c3)&&(c1>c4)&&(c1>c5)&&(c1>c6)&&(c1>c7)&&(c1>c8)&&(c1>c9)&&(c1>c10)){
                 
-                return "uno"
+                return "uno";
             }
             if((c2>c0)&&(c2>c1)&&(c2>c3)&&(c2>c4)&&(c2>c5)&&(c2>c6)&&(c2>c7)&&(c2>c8)&&(c2>c9)&&(c2>c10)){
                 
-                return "dos"
+                return "dos";
             }
             if((c3>c0)&&(c3>c1)&&(c3>c2)&&(c3>c4)&&(c3>c5)&&(c3>c6)&&(c3>c7)&&(c3>c8)&&(c3>c9)&&(c3>c10)){
                 
-                return "tres"
+                return "tres";
             }
             if((c4>c0)&&(c4>c1)&&(c4>c2)&&(c4>c3)&&(c4>c5)&&(c4>c6)&&(c4>c7)&&(c4>c8)&&(c4>c9)&&(c4>c10)){
                 
-                return "cuatro"
+                return "cuatro";
             }
             if((c5>c0)&&(c5>c1)&&(c5>c2)&&(c5>c3)&&(c5>c4)&&(c5>c6)&&(c5>c7)&&(c5>c8)&&(c5>c9)&&(c5>c10)){
                 
-                return "cinco"
+                return "cinco";
             }
             if((c6>c0)&&(c6>c1)&&(c6>c2)&&(c6>c3)&&(c6>c4)&&(c6>c5)&&(c6>c7)&&(c6>c8)&&(c6>c9)&&(c6>c10)){
                 
-                return "seis"
+                return "seis";
             }
             if((c7>c0)&&(c7>c1)&&(c7>c2)&&(c7>c3)&&(c7>c4)&&(c7>c5)&&(c7>c6)&&(c7>c8)&&(c7>c9)&&(c7>c10)){
                 
-                return "siete"
+                return "siete";
             }
             if((c8>c0)&&(c8>c1)&&(c8>c2)&&(c8>c3)&&(c8>c4)&&(c8>c5)&&(c8>c6)&&(c8>c7)&&(c8>c9)&&(c8>c10)){
                 
-                return "ocho"
+                return "ocho";
             }
             if((c9>c0)&&(c9>c1)&&(c9>c2)&&(c9>c3)&&(c9>c4)&&(c9>c5)&&(c9>c6)&&(c9>c7)&&(c9>c8)&&(c9>c10)){
                 
-                return "nueve"
+                return "nueve";
             }
             if((c10>c0)&&(c10>c1)&&(c10>c2)&&(c10>c3)&&(c10>c4)&&(c10>c5)&&(c10>c6)&&(c10>c7)&&(c10>c8)&&(c10>c9)){
                 
-                return "diez"
+                return "diez";
             }
         }
-        println "${c10}"
-        return "error"
+        return "error";
     }
     
     List estudiantesAprobados(){
     
-        return this.estudiantes.findAll{it.calificacion>4};
+        return this.estudiantes.each{it.calificacion>4};
     }
     
     List estudiantesNoCatamarquenios(){
     
         return this.estudiantes.findAll{it.ciudadNatal!="Catamarca"};
-    }
-    
+    } 
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -369,9 +367,4 @@ println "\n";
 
 List estudiantesNoCatamarquenios = curso.estudiantesNoCatamarquenios();
 estudiantesNoCatamarquenios.each{println it.nombre; println it.dni; println it.edad; println it.ciudadNatal; println it.calificacion};
-    
-    
-    List estudiante {
-    return estudiante;
-    }
 
