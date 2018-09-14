@@ -134,7 +134,7 @@ class Curso {
         return porcentajeAprobados;
     }
     
-    void promedioDeCalicaciones(){
+  /*  void promedioDeCalicaciones(){
         
         float sumaNotas = 0,cantidadTotal=0,promedioNotas=0;
         if(estudiantes.size()>0)
@@ -149,7 +149,23 @@ class Curso {
             
             println "El promedio de las notas obtenidas por los alumnos es igual a ${promedioNotas}";
         }
+    }*/
+    
+    // promedio con closures
+      void promedioDeCalicaciones(){
+        
+        float sumaNotas = 0,cantidadTotal=0,promedioNotas=0;
+        if(estudiantes.size()>0)
+        {
+           sumaNotas= estudiantes.calificacion.inject(0){acumulador, it-> acumulador+=it}
+            cantidadTotal=estudiantes.size();
+            
+            promedioNotas=sumaNotas/cantidadTotal;
+            
+            println "El promedio de las notas obtenidas por los alumnos es igual a ${promedioNotas}";
+        }
     }
+    
     
     boolean unDesastre(){
         
