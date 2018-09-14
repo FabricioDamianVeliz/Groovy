@@ -39,7 +39,7 @@ class Curso {
         return cantidad;
     }
     
-    void resetearNotas()
+    /*void resetearNotas()
     {
         if(estudiantes.size()>0)
         {
@@ -48,6 +48,11 @@ class Curso {
                 estudiantes.get(i).setCalificacion(0);
             } 
         }
+    }*/
+    
+    void resetearNotas()
+    {
+       this.estudiantes.each{it.calificacion=0};
     }
     
     void existeEstudiante(unEstudiante){
@@ -297,6 +302,17 @@ class Curso {
         println "${c10}"
         return "error"
     }
+    
+    List estudiantesAprobados(){
+    
+        return this.estudiantes.findAll{it.calificacion>4};
+    }
+    
+    List estudiantesNoCatamarquenios(){
+    
+        return this.estudiantes.findAll{it.ciudadNatal!="Catamarca"};
+    }
+    
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -307,6 +323,7 @@ curso.agregarEstudiante( new Estudiante("fabri",21123123,21,"Catamarca",6));
 curso.agregarEstudiante( new Estudiante("ale",21423123,32,"Catamarca",8));
 curso.agregarEstudiante( new Estudiante("esteban",21173123,20,"Catamarca",10));
 curso.agregarEstudiante( new Estudiante("lucas",21173193,22,"Tucuman",10));
+curso.agregarEstudiante( new Estudiante("juan",21176193,32,"Tucuman",3));
 
 def cantidad=curso.cantidadDeEstudiantesInscriptos();
 println "Cantidad de estudiantes inscriptos: ${cantidad}\n";
@@ -344,3 +361,12 @@ println "\n";
 
 def mayorFrecuencia=curso.calificacionMasFrecuente();
 println "La calificacion mas frecuente es un ${mayorFrecuencia}\n";
+
+List estudiantesAprobados = curso.estudiantesAprobados();
+estudiantesAprobados.each{println it.nombre; println it.dni; println it.edad; println it.ciudadNatal; println it.calificacion};
+
+println "\n";
+
+List estudiantesNoCatamarquenios = curso.estudiantesNoCatamarquenios();
+estudiantesNoCatamarquenios.each{println it.nombre; println it.dni; println it.edad; println it.ciudadNatal; println it.calificacion};
+
