@@ -323,8 +323,8 @@ curso.agregarEstudiante( new Estudiante("esteban",21173123,20,"Catamarca",10));
 curso.agregarEstudiante( new Estudiante("lucas",21173193,22,"Tucuman",10));
 curso.agregarEstudiante( new Estudiante("juan",21176193,32,"Tucuman",3));
 
-def cantidad=curso.cantidadDeEstudiantesInscriptos();
-println "Cantidad de estudiantes inscriptos: ${cantidad}\n";
+
+println "Cantidad de estudiantes inscriptos: ${curso.cantidadDeEstudiantesInscriptos()}\n";
 
 //curso.resetearNotas();
 
