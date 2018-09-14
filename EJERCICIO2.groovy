@@ -106,7 +106,7 @@ class Curso {
                 }
             } 
             if(cantidad>=0){
-            println "Existe/n "+cantidad+" alumno/s inscripto/s con ese nombre en el curso";
+            println "Existe/n "+cantidad+" alumno/s inscripto/s llamados "+unNombre+" en el curso";
             }
             else{
                 
