@@ -369,4 +369,9 @@ println "\n";
 
 List estudiantesNoCatamarquenios = curso.estudiantesNoCatamarquenios();
 estudiantesNoCatamarquenios.each{println it.nombre; println it.dni; println it.edad; println it.ciudadNatal; println it.calificacion};
+    
+    
+    List estudiante {
+    return estudiante;
+    }
 
